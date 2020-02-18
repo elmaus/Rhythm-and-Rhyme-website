@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {{ fontawesome_html() }}
+    <title>{{ title }}</title>
+    <link rel="icon" href="../static/images/rr-logo.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="{{ url_for('static', filename='css/fontawesome.min.css')}}">
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">-->
+</head>
+<body>
+    <div class='main-body'>
+        <div class='grid-body-admin'>
+        {% block content %}
+        {% endblock content %}
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
+</body>
+</html>
