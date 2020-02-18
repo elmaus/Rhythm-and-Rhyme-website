@@ -1,0 +1,74 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+    <div class="body-box">
+        <br>
+        <form method="POST" action='edit_member' enctype=multipart/form-data>
+            <div class="body-content">
+                <input class="form-input dark" type="text" name="member" value='{{ target.name }}' readonly>
+                <div class="form-row">
+                    <p>Picture</p>
+                    <input type="file" name='file'>
+                </div>
+
+                <div class="form-row">
+                    <p>Name:</p>
+                    <input class='form-input dark' name='name' value='{{ target.name }}'>
+                </div>
+
+                <div class="form-row">
+                    <label>Division:</label>
+                    <select class="dark" name='division'>
+                        <option hidden value='{{ target.division }}'>{{ target.division }}</option>
+                        <option value='Top 5'>Top 5</option>
+                        <option value='Officer'>Officer</option>
+                        <option value='Pioneer'>Pioneer</option>
+                        <option value='Loyal'>Loyal</option>
+                        <option value='Member'>Member</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label>Position:</label>
+                    <input type="text" class='form-input dark' name='title' value='{{ target.title }}'>
+                </div>
+
+                <div class="form-row">
+                    <label>Smule Name:</label>
+                    <input type="text" class='form-input dark' name='smule' value='{{ target.smule }}'>
+                </div>
+
+                <div class="form-row">
+                    <label>Location:</label>
+                    <input type='text' class='form-input dark' name='location' value='{{ target.location }}'>
+                </div>
+
+                <div class="form-row">
+                    <label>Birthday</label>
+                    <input type="text" class="form-input dark" name="birthday" value="{{ target.birthday }}">
+                </div>
+
+                <div class="form-row">
+                    <label>Fav. Songs:</label>
+                    <textarea class='form-input dark' name='fav_song'>{{ target.fav_song }}</textarea>
+                </div>
+
+                <div class="form-row">
+                    <label>Admission:</label>
+                    <input class='form-input dark' name='admission' value='{{ target.admission }}'>
+                </div>
+
+                <div class="form-row">
+                    <label>About me:</label>
+                    <textarea class="form-input dark" name="bio">{{ target.bio }}</textarea>
+                </div>
+
+                <div class="form-row">
+                    <p></p>
+                    <button type="submit" class='submit-btn' name='submit' value='edit'><i class="fas fa-save"></i> Update info</button>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+{% endblock %}
