@@ -1,0 +1,50 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+    <div class='body-box'>
+
+
+        <div class='result-final-grid'>
+            {% for c in contenders %}
+                <div class='body-content'>
+                    <h2>{{ c.name }}</h2>
+                    <hr>
+                    <div class="five-column">
+                        <label class="center">A</label>
+                        <label class="center">B</label>
+                        <label class="center">C</label>
+                        <label class="center">D</label>
+                        <label class="center">E</label>
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="five-column">
+                        <p class="center-bold">{{ c.ja }}</p>
+                        <p class="center-bold">{{ c.jb }}</p>
+                        <p class="center-bold">{{ c.jc }}</p>
+                        <p class="center-bold">{{ c.jd }}</p>
+                        <p class="center-bold">{{ c.je }}</p>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class='result-tag'>
+                        <img class="cont-profile-result" src="../static/contender_profile/{{ c.badge }}">
+                        <div class='rank-name'>
+                            <div class='two-column'>
+                                <h1 class="center-bold">{{ c.rank }}</h1>
+                                <h1 class='center-bold'>{{ c.total }}</h1>
+                            </div>
+                            <br>
+                            <div class='two-column'>
+                                <h4 class='center'>RANK</h4>
+                                <h4 class='center'>AVERAGE</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}vvvvvvvvvvvvvvvvv
