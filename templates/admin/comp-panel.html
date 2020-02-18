@@ -1,0 +1,114 @@
+
+
+
+
+{% extends 'base-admin.html' %}
+
+{% block content %}
+    <div class="body-box">
+        <form method="POST" action="/edit_comp" enctype="multipart/form-data">
+            <div class="body-content">
+                <image class="mem-profile" src="static/images/{{ comp.banner }}">
+                <br>
+                <div class="select-row">
+                    <input class="form-input" name="file" type='file'>
+                    <button class="submit-btn" type="submit" name="submit" value="banner">Save</button>
+                </div>
+            </div>
+
+            <div class="body-content">
+
+                <div class="form-row">
+                    <p>Comp.Title</p>
+                    <input class="form-input dark" type="text" name="title" value='{{ comp.title }}'>
+                </div>
+                <div class="form-row">
+                    <p>Subtitle</p>
+                    <input class="form-input dark" type="text" name="tag" value='{{ comp.tag }}'>
+                </div>
+                <div class="form-row">
+                    <p>Round</p>
+                    <input class="form-input dark" type="digit" name="round" value='{{ comp.round }}'>
+                </div>
+                <br>
+                <button class="submit-btn" name="submit" value="title-btn">Update</button>
+            </div>
+
+            <div class="body-content">
+                <label>Deadline</label>
+                <div class="form-row-date">
+                    <select name="d-month">
+                        <option>{{ dead["month"] }}</option>
+                        {% for m in months%}
+                            <option value="{{ m }}">{{ m }}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="center" name="d-day">
+                        <option>{{ dead["day"] }}</option>
+                        {% for d in days %}
+                            <option value="{{ d }}">{{ d }}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="form-input dark center" type="text" name="d-year" value='{{ dead["year"] }}'>
+                </div>
+                <div class="form-row-time">
+                    <input class="form-input dark center" type="digit" name="d-hour" value='{{ dead["hour"] }}'>
+                    <label class="center">:</label>
+                    <input class="form-input dark center" type="digit" name="d-minute" value='{{ dead["minute"] }}'>
+                    <label class="center">:</label>
+                    <input class="form-input dark center" type="digit" name="d-second" value='{{ dead["second"] }}'>
+                    <label class="center">GMT+8</label>
+                </div>
+                <br>
+                <label>Announcement</label>
+                <div class="form-row-date">
+                    <select name="a-month">
+                        <option>{{ ann["month"] }}</option>
+                        {% for m in months %}
+                        <option value="{{ m }}">{{ m }}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="center" name="a-day">
+                        <option>{{ ann["day"] }}</option>
+                        {% for d in days %}
+                        <option value="{{ d }}">{{ d }}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="form-input dark center" type="text" name="a-year" value='{{ ann["year"] }}'>
+                </div>
+                <div class="form-row-time">
+                    <input class="form-input dark center" type="digit" name="a-hour" value='{{ ann["hour"] }}'>
+                    <label class="center">:</label>
+                    <input class="form-input dark center" type="digit" name="a-minute" value='{{ ann["minute"] }}'>
+                    <label class="center">:</label>
+                    <input class="form-input dark center" type="digit" name="a-second" value='{{ ann["second"] }}'>
+                    <label class="center">GMT+8</label>
+                </div>
+                <br>
+                <button class="submit-btn" name="submit" value="deadline">Update</button>
+            </div>
+
+            <div class="body-content">
+
+                <div class="form-row-2">
+                    <p class="center">Criteria</p>
+                </div>
+
+                <div class="form-row-2">
+                    <input class="form-input dark" type="text" name="crit1" value='{{ comp.crit1 }}'>
+                    <input class="form-input dark center" type="text" name="per1" value='{{ comp.per1 }}'>
+                </div>
+                <div class="form-row-2">
+                    <input class="form-input dark" type="text" name="crit2" value='{{ comp.crit2 }}'>
+                    <input class="form-input dark center" type="text" name="per2" value='{{ comp.per2 }}'>
+                </div>
+                <div class="form-row-2">
+                    <input class="form-input dark" type="text" name="crit3" value='{{ comp.crit3 }}'>
+                    <input class="form-input dark center" type="text" name="per3" value='{{ comp.per3 }}'>
+                </div>
+                <br>
+                <button class="submit-btn" name="submit" value="criteria">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
