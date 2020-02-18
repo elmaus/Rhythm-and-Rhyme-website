@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+
+            <h2 class='center'>Member's Registration Form</h2>
+            <form action="/register_judge" method="POST" enctype="multipart/form-data">
+                <div class="cont-reg-container">
+                    <div class="form-row">
+                        <label>Name:</label>
+                        <input class="form-input dark" type="text" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label>username:</label>
+                        <input class="form-input dark" type="text" name="username" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Password:</label>
+                        <input class="form-input dark" type="text" name="password" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Bio:</label>
+                        <textarea class="form-input dark" type="text" name="bio" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label>Badge:</label>
+                        <input class="form-input" type="file" name="file" required>
+                    </div>
+
+                    <div class='form-row'>
+                        <label></label>
+                        <button class='submit-btn' type=submit name='submit'>Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
