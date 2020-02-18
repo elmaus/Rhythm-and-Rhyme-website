@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+            <h1 class='center'>Rhythm and Rhyme</h1>
+            <h2 class='center'>Login Form</h2>
+            <form action="/login" method="POST" enctype="multipart/form-data">
+                <div class="cont-reg-container">
+                    <div class="form-row">
+                        <label>Username:</label>
+                        <input class="form-input dark" type="text" name="username">
+                    </div>
+                    <div class="form-row">
+                        <label>Password:</label>
+                        <input class="form-input dark" type="password" name="password">
+                    </div>
+                    <div class="form-row">
+                        <label>Remember me</label>
+                        <input type="checkbox" name="check">
+                    </div>
+
+                    <div class='form-row'>
+                        <label></label>
+                        <button class='submit-btn' type=submit name='submit'>Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
