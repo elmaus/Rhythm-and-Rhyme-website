@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='body-box'>
+        <div class='body-content'>
+            <h2 class="center">{{ comp.title }}</h2>
+            <p class='center'>Round {{ comp.round}}</p>
+            <br>
+            <h3 class='center'>{{ current_user.username }}</h3>
+        </div>
+
+        <form method='POST' action="/score_sheet">
+            {% for con in contenders %}
+            <div class='body-content'>
+                <div class='score-card'>
+                    <img class='score-profile' src="../static/contender_profile/{{ con.badge }}">
+                    <div>
+                        <div class="edit-members-data">
+                            <h3>No {{ con.no }}. {{ con.name }}</h3>
+                            <div class="edit-members-data-btn">
+                                <p>Edit</p>
+                                <button class="btn-edit" type="submit" name='name' value="{{ con.name }}"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class='score-card-info'>
+                            <p>Total Score:</p>
+                            <h3 class='right'>{{ con.total }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+{% endblock %}
