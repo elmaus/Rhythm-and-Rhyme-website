@@ -1,0 +1,16 @@
+
+
+
+{% extends 'base-admin.html' %}
+
+    {% block content %}
+        <div class="body-content">
+            <h1 class='center'>{{ message }}</h1>
+            <br>
+            <div class="go-back-div">
+                <a href="{{ url_for('edit_entry') }}"><button class="go-back"> Ok</button></a>
+            </div>
+            <br>
+        </div>
+
+    {% endblock %}
