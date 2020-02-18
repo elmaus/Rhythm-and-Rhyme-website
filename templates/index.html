@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+            <h2 class='content-title'>become a part of our family</h2>
+            <p>If you want to be a part of Rhythm and Rhyme, you can submit a link of your best solo recording (old or new) to one of our officers. You can also watch out for open audition to our smule official account Rhythm_Rhyme10 or fill in this <a href="#">form</a>.</p>
+        </div>
+        <div class='body-content'>
+            <h2 class='content-title'>how we recognize our members</h2>
+            <p>Every month we acknowledge our members and officer's loyalty and how they show their activeness and dedication to the group by giving a recognition to what they've contributed.</p>
+            <div class='body-gallery-recog'>
+                <div class='body-card'>
+                    <h3 class='body-card-title'></h3>
+                    <img src="{{ url_for('static', filename='images/o-month.jpg') }}">
+                </div>
+                <div class='body-card'>
+                    <h3 class='body-card-title'></h3>
+                    <img src="{{ url_for('static', filename='images/m-month.jpg') }}">
+                </div>
+                <div class='body-card'>
+                    <h3 class='body-card-title'></h3>
+                    <img src="{{ url_for('static', filename='images/attendance.jpg') }}">
+                </div>
+                <div class='body-card'>
+                    <h3 class='body-card-title'></h3>
+                    <img src="{{ url_for('static', filename='images/cooperative.jpg') }}">
+                </div>
+                <div class='body-card'>
+                    <h3 class='body-card-title'></h3>
+                    <img src="{{ url_for('static', filename='images/friendly.jpg') }}">
+                </div>
+           </div>
+            <br>
+            <a ref="#">see more...</a>
+        </div>
+        <div class='body-content'>
+            <h2 class='content-title'>what's inside Rhythm and Rhyme</h2>
+            <p>Aside from many things inside RR, these are the most exiting part that every members love.</p>
+            <br>
+            <ol>
+                <li>OUR LOUNGE: Our lounge is the best chat room you could ever imagine. Every members are friendly and welcoming. This is the place where boredom or OP doesn't exist. Our lounge is a home where every RR meets.
+                </li>
+                <br>
+                <li>ATTENDANCE: From all RR rooms, our attendance room is thE most clean, neat and very organized room. It shows in this room that every Rhythm and Rhyme members are well disciplined.
+                </li>
+                <br>
+                <li>OUR GS: We organize, plan and discuss every GS project to produce exeptional collabs. We ensure partitions and solo parts are well distributed to all participants.
+                </li>
+                <br>
+                <li>RR UNIVERSITY: Rhytm and Rhyme goal is not only to provide good quality collaborations, but as well as cultivating better singers with high quality performance.
+                </li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
+
