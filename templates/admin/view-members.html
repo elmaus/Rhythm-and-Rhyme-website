@@ -1,0 +1,76 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+    <div class="body-box">
+        <div class="body-content">
+            <div class="data-row">
+                <p>Top 5    :</p>
+                <p>{{ top5 }}</p>
+            </div>
+            <div class="data-row">
+                <p>Officers    :</p>
+                <p>{{ officer }}</p>
+            </div>
+            <div class="data-row">
+                <p>Pioneers    :</p>
+                <p>{{ pioneer }}</p>
+            </div>
+            <div class="data-row">
+                <p>Loyals    :</p>
+                <p>{{ loyal }}</p>
+            </div>
+            <div class="data-row">
+                <p>Members    :</p>
+                <p>{{ member }}</p>
+            </div>
+            <div class="data-row">
+                <p>Total    :</p>
+                <p>{{ totmem }}</p>
+            </div>
+        </div>
+        <form method="POST" action='{{ url_for("edit") }}'>
+        {% for m in members %}
+        <div class="body-content">
+
+            <div class="edit-members-data">
+                <h2>{{ m.name}}</h2>
+                <div class="edit-members-data-btn">
+                    <button class="btn-edit" type="submit" name="edit" value="edit-{{ m.name }}"><i class="fas fa-edit"></i></button>
+                    <button class="btn-edit danger-text" type="submit" name="edit" value="delete-{{ m.name }}"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class='data-row'>
+                <p>Division</p>
+                <p>{{ m.division}}</p>
+            </div>
+            <div class='data-row'>
+                <p>Title</p>
+                <p>{{ m.title}}</p>
+            </div>
+            <div class='data-row'>
+                <p>B-day</p>
+                <p>{{ m.birthday}}</p>
+            </div>
+            <div class='data-row'>
+                <p>Admission</p>
+                <p>{{ m.admission}}</p>
+            </div>
+            <div class='data-row'>
+                <p>Group/s</p>
+                <p>{{ m.group}}</p>
+            </div>
+            <div class='data-row'>
+                <p>F-song</p>
+                <p>{{ m.fav_song}}</p>
+            </div>
+            <div class='data-row'>
+                <p>About me</p>
+                <p>{{ m.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        </form>
+    </div>
+{% endblock %}
