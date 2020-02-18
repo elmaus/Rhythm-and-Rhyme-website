@@ -1,0 +1,36 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+    <div class="body-box">
+        <br>
+        <form method="POST" action='upload_picture' enctype=multipart/form-data>
+            <div class="body-content">
+                <div class="form-row">
+                    <p>Picture</p>
+                    <input type="file" name='file'>
+                </div>
+
+                <div class="form-row">
+                    <p>Description:</p>
+                    <input class='form-input dark' name='desc'>
+                </div>
+
+                <div class="form-row">
+                    <label>Category:</label>
+                    <select class="select-input" name='category'>
+                        <option>Category</option>
+                        {% for c in categories %}
+                           <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <p></p>
+                    <button type="submit" class='submit-btn' name='submit'>Upload</button>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+{% endblock %}
