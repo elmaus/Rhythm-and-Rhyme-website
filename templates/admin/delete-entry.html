@@ -1,0 +1,18 @@
+
+
+
+{% extends 'base-admin.html' %}
+
+    {% block content %}
+
+        <form method="POST" action='/edit_entry'>
+            {% for c in entries %}
+            <div class="body-content">
+                <button class="danger-btn" type="submit" name="delete" value="{{ c.line_name }}">Delete</button>
+                <p>.</p>
+                <iframe src="https://www.smule.com{{ c.link }}/frame" frameborder="0" width="100%" height="125"></iframe>
+            </div>
+            {% endfor %}
+        </form>
+
+    {% endblock %}
