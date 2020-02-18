@@ -1,0 +1,56 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="body-box">
+
+        <div class='body-content'>
+            <h1 class='center'>{{ comp.title }}</h1>
+            <h4 class='center'>Submission of entries for round {{ comp.round }}</h2>
+            <br>
+            <h3 class='center' id="dead">{{comp.deadline}}</h3>
+            <br>
+            <div class="count-down-body">
+                <br>
+                <div class="count-down-table">
+                    <h1 id="days">0</h1>
+                    <h1 id="hours">0</h1>
+                    <p>:</p>
+                    <h1 id="minutes">0</h1>
+                    <p>:</p>
+                    <h1 id="seconds">0</h1>
+                </div>
+                <br>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <a href="{{ url_for('submit_entry') }}"><button class="submit-btn">Submit Entry</button></a>
+
+        </div>
+
+        <div class='body-content'>
+            <h1 class='center'>{{ comp.title }}</h1>
+            <h4 class='center'>Result for round {{ comp.round }}</h2>
+            <br>
+            <h3 class='center' id="">{{comp.announce}}</h3>
+            <br>
+            <div class="count-down-body">
+                <br>
+                <div class="count-down-table">
+                    <h1 id="a-days">0</h1>
+                    <h1 id="a-hours">0</h1>
+                    <p>:</p>
+                    <h1 id="a-minutes">0</h1>
+                    <p>:</p>
+                    <h1 id="a-seconds">0</h1>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
