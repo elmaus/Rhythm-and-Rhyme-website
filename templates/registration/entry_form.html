@@ -1,0 +1,64 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+            <h1 class='center'>{{ comp.title }}</h1>
+            <h2 class='center'>{{ comp.round }}</h2>
+            <br>
+            <p>Dedline of submition: <span id="dead">{{ comp.deadline }}</span></p>
+            <br>
+            <div class="count-down-body">
+                <p>Remaining Time!</p>
+                <br>
+                <div class="count-down-table">
+                    <h1 id="days">0</h1>
+                    <h1 id="hours">0</h1>
+                    <p>:</p>
+                    <h1 id="minutes">0</h1>
+                    <p>:</p>
+                    <h1 id="seconds">0</h1>
+                </div>
+                <br>
+
+                <div class="count-down-table">
+                    <p>days</p>
+                    <p>hours</p>
+                    <p></p>
+                    <p>minutes</p>
+                    <p></p>
+                    <p>seconds</p>
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <h1 class="center">Entry Submission Form</h1>
+            <br>
+            <form action="/submit_entry" method="POST">
+                <div class="cont-reg-container">
+                    <div class="form-row">
+                        <label>Line Name:</label>
+                        <input class="form-input dark" id="entryname" type="text" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Title:</label>
+                        <input class="form-input dark" id="entrytitle" type="text" name="title" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Link:</label>
+                        <textarea class="form-input dark" id="entrylink" type="text" name="link" required></textarea>
+                    </div>
+                    <div class='form-row'>
+                        <label></label>
+                        <button class='submit-btn' id="entrybtn" type=submit name='submit'>Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
