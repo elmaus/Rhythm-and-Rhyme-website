@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+
+            <h2 class='center'>Member's Registration Form</h2>
+            <form action="/member_registration" method="POST" enctype="multipart/form-data">
+                <div class="cont-reg-container">
+                    <div class="form-row">
+                        <label>Name:</label>
+                        <input class="form-input dark" type="text" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Smule Name:</label>
+                        <input class="form-input dark" type="text" name="smule" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Group/s:</label>
+                        <input class="form-input dark" type="text" name="group" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Birthday:</label>
+                        <div class="select-row">
+                            <select class="dark" name='month'>
+                                <option value='' selected disabled hidden>Month</option>
+                                {% for m in month %}
+                                <option value='{{ m }}'>{{ m }}</option>
+                                {% endfor %}
+                            </select>
+                            <select class="dark" name='day'>
+                                <option value='' selected disabled hidden>Day</option>
+                                {% for d in day %}
+                                <option value={{ d }}>{{ d }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Location:</label>
+                        <input class="form-input dark" type="text" name="location" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Fav. Songs:</label>
+                        <textarea class="form-input dark" type="text" name="song" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label>About Me:</label>
+                        <textarea class="form-input dark" type="text" name="bio" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label>Picture:</label>
+                        <input class="form-input" type="file" name="file" required>
+                    </div>
+
+                    <div class='form-row'>
+                        <label></label>
+                        <button class='submit-btn' type=submit name='submit'>Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
