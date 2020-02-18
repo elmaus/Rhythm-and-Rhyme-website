@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {{ fontawesome_html() }}
+    <title>{{ title }}</title>
+    <link rel="icon" href="../static/images/rr-logo.png"
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="{{ url_for('static', filename='css/fontawesome.min.css')}}">
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">-->
+</head>
+<body>
+    <div class='head-main'>
+        <div class='head-bar'>
+            <div class='head-box'>
+                <div class='logo'>
+                    <h1>Rhythm and Rhyme</h1>
+                </div>
+                <div class='nav-bar'>
+                    <a href='{{ url_for("home") }}'>home</a>
+                    <a href='{{ url_for("about") }}'>about</a>
+                    <a href="{{ url_for('event') }}">event</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('logout') }}">logout</a>
+                    {% else %}
+                        <a href='{{ url_for("login") }}'>sign in</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class='greetings'>
+            <div class='greeting-card'>
+                <h3>Bring Music to Life</h3>
+                <p>Our group seem naturally drawn to poetry. It's some combination of <span class='highlight'>rhythm</span>, <span class='highlight'>rhyme</span> and <span class='highlight'>family</span>.</p>
+
+                <div class='call-btn'><a href='#'>join us</a></div>
+
+            </div>
+            <div class='greeting-image-box'>
+            </div>
+        </div>
+
+
+        <div class='member-nav'>
+            <div class='member-nav-box'>
+                <div class='divisions'>
+                    <div class='badge'>
+                        <a href="{{ url_for('top_5') }}"><i class="fas fa-crown"></i></a>
+                    </div>
+                    <p>top 5</p>
+                </div>
+                <div class='divisions'>
+                    <div class='badge'>
+                        <a href="{{ url_for('officer') }}"><i class="fas fa-gem"></i></a>
+                    </div>
+                    <p>officers</p>
+                </div>
+                <div class='divisions'>
+                    <div class='badge'>
+                        <a href="{{ url_for('pioneer') }}"><i class="fas fa-anchor"></i></a>
+                    </div>
+                    <p>pioneers</p>
+                </div>
+                <div class='divisions'>
+                    <div class='badge'>
+                        <a href="{{ url_for('loyal') }}"><i class="fas fa-heart"></i></a>
+                    </div>
+                    <p>loyals</p>
+                </div>
+                <div class='divisions'>
+                    <div class='badge'>
+                        <a href="{{ url_for('comrade') }}"><i class="fas fa-users"></i></a>
+                    </div>
+                    <p>members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='main-body'>
+        <div class='grid-body'>
+            {% block content %}
+            {% endblock content %}
+            <div class='side-bar'>
+                <div class='side-content'>
+                    <h3 class='side-content-title'>meet ups</h3>
+                    <img class='side-photo' src="{{ url_for('static', filename='images/meetups.jpg') }}">
+                    <div class='side-content-desc'>
+                        <p>Wherever we travel to, the wonderful people we meet become our family.</p>
+                        <br>
+                        <a href="#"> view more...</a>
+                    </div>
+
+                </div>
+                <div class='side-content'>
+                    <h3 class='side-content-title'>featured collab</h3>
+                    <video class='side-video' width='250px' controls>
+                        <source src="{{ url_for('static', filename='videos/show.mp4') }}" type="video/mp4">
+                    </video>
+                    <div class='side-content-desc'>
+                        <p>Coming together is a beginning. Keeping together is progress. Working together is success.</p>
+                        <br>
+                        <a href="#"> view more...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/percentage.js') }}"></script>
+
+</body>
+</html>
