@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class='body-box'>
+        <div class='body-content'>
+            <h1 class='center'>{{ comp.title }}</h1>
+            <h2 class='center'>Registration Form</h2>
+            <form action="/register_contender" method="POST" enctype="multipart/form-data">
+                <div class="cont-reg-container">
+                    <div class="form-row">
+                        <label>Line Name:</label>
+                        <input class="form-input dark" type="text" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Smule Name:</label>
+                        <input class="form-input dark" type="text" name="smule" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Group:</label>
+                        <input class="form-input dark" type="text" name="group" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Badge:</label>
+                        <input class="form-input" type="file" name="file" required>
+                    </div>
+                    <div class='form-row'>
+                        <label></label>
+                        <button class='submit-btn' type=submit name='submit'>Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
