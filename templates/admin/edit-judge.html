@@ -1,0 +1,67 @@
+
+
+
+{% extends 'base-admin.html' %}
+
+    {% block content %}
+        <div class="body-content">
+
+            <form method="POST" action='/edit_judges'>
+                <h4 class="">Judges</h4>
+
+                <div class="form-row-3">
+                    <label>Head Judge</label>
+                    <select name="ja">
+                        <option value="{{ comp.ja }}">{{ comp.ja }}</option>
+                        {% for j in judges %}
+                        <option value="{{ j.name }}">{{ j.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-row-3">
+                    <label>Primary Judge</label>
+                    <select name="jb">
+                        <option value="{{ comp.jb }}">{{ comp.jb }}</option>
+                        {% for j in judges %}
+                        <option value="{{ j.name }}">{{ j.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-row-3">
+                    <label>Secondary Judge</label>
+                    <select name="jc">
+                        <option value="{{ comp.jc }}">{{ comp.jc }}</option>
+                        {% for j in judges %}
+                        <option value="{{ j.name }}">{{ j.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-row-3">
+                    <label>Secondary Judge</label>
+                    <select name="jd">
+                        <option value="{{ comp.jd }}">{{ comp.jd }}</option>
+                        {% for j in judges %}
+                        <option value="{{ j.name }}">{{ j.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-row-3">
+                    <label>Secondary Judge</label>
+                    <select name="je">
+                        <option value="{{ comp.je }}">{{ comp.je }}</option>
+                        {% for j in judges %}
+                        <option value="{{ j.name }}">{{ j.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <br>
+                <button class="submit-btn" type='submit' name='submit' value='judge' class='btn btn-success col-5'>Update</button>
+
+            </form>
+        </div>
+    {% endblock %}
