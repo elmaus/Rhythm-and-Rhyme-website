@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="body-box">
+        <div class="body-content">
+            <h3>{{ contender.line_name }}</h3>
+            <br>
+            <div class="d-flex justify-content-center bg-dark">
+                <iframe src="https://www.smule.com{{ contender.link }}/frame" frameborder="0" width="100%" height="125"></iframe>
+            </div>
+            <br>
+            <p class='text-white text-center'>{{ contender.title }}</p>
+        </div>
+
+
+        <div class="body-content">
+            <form method="POST" action='/save_score'>
+                <div class="score-sheet-container">
+
+                    <div class="score-table-head">
+                        <p>Criteria</p>
+                        <p></p>
+                        <p class='right-center'>Score</p>
+                        <p class='center'>Grade</p>
+                    </div>
+
+                    <div class="score-table-body">
+                        <p class="scope">{{ comp.crit1 }}</p>
+                        <p id="per1">{{ comp.per1 }}</p>
+                        <p class='right-center' id='pg1'></p>
+                        <input class="score-input dark center" type="number" min='75', max='100' required id='crit1' name="crit1" value="{{ score[0] }}">
+                    </div>
+                    <div class="score-table-body">
+                        <p class="scope">{{ comp.crit2 }}</p>
+                        <p id="per2">{{ comp.per2 }}</p>
+                        <p class='right-center' id='pg2'></p>
+                        <input class="score-input dark center" type="number" min='75', max='100' required id='crit2' name="crit2" value="{{ score[1] }}">
+                    </div>
+                    <div class="score-table-body">
+                        <p class="scope">{{ comp.crit3 }}</p>
+                        <p id="per3">{{ comp.per3 }}</p>
+                        <p class='right-center' id='pg3'></p>
+                        <input class="score-input dark center" type="number" min='75', max='100' required id='crit3' name="crit3" value="{{ score[2] }}">
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="score-table-body">
+                        <p class="scope">Total Score</p>
+                        <p>100%</p>
+                        <p class="text-light right-center" id='total'></p>
+                    </div>
+                    <br>
+                    <br>
+
+                </div>
+                <br>
+
+                {% if current_user.section == "judge_a" %}
+                    <p>Comment:</p>
+                    <div class="row">
+                        <textarea class='dark score-comment' name="comment1"></textarea>
+                    </div>
+                {% endif %}
+                {% if current_user.section == "judge_b" %}
+                    <p>Comment:</p>
+                    <div class="row">
+                        <textarea class='dark score-comment' name="comment2"></textarea>
+                    </div>
+                {% endif %}
+                <br>
+                <div class="d-flex justify-content-center">
+                    <button class="score-save-btn" type="submit" name='name' value='{{ contender.line_name }}'><i class="fas fa-save"></i> Save</button>
+                    <br>
+                </div>
+                <br>
+            </form>
+        </div>
+        <br>
+    </div>
+{% endblock %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/percentage.js') }}"></script>v
